@@ -18,7 +18,7 @@ double: 倍精度浮動小数点数
 import java.util.Random;  
 ランダムな値を生成する変数の生成⇣  
 Random rad = new Random();  
-これを使う⇣
+これを使う⇣  
 int random_num = rand.nextInt(10); //10までの整数から1つの整数を生成  
 
 ## 入力
