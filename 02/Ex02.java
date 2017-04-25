@@ -15,7 +15,9 @@ class Ex02 {
         System.out.println("半径を入力: ");// 半径の入力を促す
         int r = stdIn.nextInt();// 球の半径を読み込む
 
-        System.out.println("体積: "+ PI * r*r*r * 4 / 3);// 体積を表示
+        System.out.println("体積: "+ 4. / 3. * PI * r*r*r);// 体積を表示
+        // × double s = 4 / 3 * PI * r * r * r;
+        // △ double s = 4 * PI * r * r * r / 3;
         System.out.println("表面積: "+ 4 * PI * r*r);// 表面積を表示
     }
 }
