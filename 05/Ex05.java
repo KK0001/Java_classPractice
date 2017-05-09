@@ -20,7 +20,7 @@ class Ex05 {
         double ans = 0.0;           // 平方根の答え
 
         // √n の近似値を計算するプログラムを記入
-        for (int i = 1; i <= 5000; i++) {
+        for (int i = 1000; i <= 5000; i++) {
           float x = (float)i / 1000;
           if(x*x<=n)
            ans = x;
