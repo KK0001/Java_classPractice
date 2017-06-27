@@ -14,14 +14,6 @@ public class LinearEquationCalculation3{
                                        {  -4.82, 1.45,  4.20, 5.14, 3.63},
                                         {  1.59, -5.40,  2.06, -3.18, 4.96}};  //行列
 
-    // System.out.println(degree + "�������s��\n");
-    // for(int i=0; i<degree; i++) {
-    //   for (int j=0; j<degree; j++) {
-    //     System.out.print(" " + square_matrix[i][j]);
-    //   }
-    //   System.out.print("\n");
-    // }
-
     LinearEquationSolver3 les = new LinearEquationSolver3(degree, square_matrix);
 
     square_matrix = les.calculateInverseMatrix();

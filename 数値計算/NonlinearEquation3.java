@@ -1,10 +1,3 @@
-/* ���t�����
- * ���K6.7
- * f(x) = x^2 + x - 6�@�̍�(> 0)��2���@�C�j���[�g���@�C�����@���g���ċ��߂�
- * �v���O���������D�������C2���@�C�j���[�g���@�C�����@�͂��ꂼ��
- * ���\�b�h�Ƃ��C���C���֐�����Ăяo���Ă��ꂼ��̌��ʂ�\��
- * ���邱�ƁD�܂��C���[0, 5]�C�� = 10E-5�Ƃ���D
- */
 
 
 public class  NonlinearEquation3 {
@@ -97,7 +90,7 @@ public class  NonlinearEquation3 {
 
       x2 = x1 - (defineFunction(x1) * dx/dy);
 
-      if (Math.abs(dx/x1) < EPS) break; 
+      if (Math.abs(dx/x1) < EPS) break;
 
     }
 

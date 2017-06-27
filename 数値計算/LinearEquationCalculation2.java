@@ -19,14 +19,6 @@ public class LinearEquationCalculation2{
     double [] unknown_vector = {0.0, 0.0, 0.0, 0.0, 0.0};  //求める未知ベクトル(解ベクトル)
     double [] known_vector = {7.25, -5.88, 8.30, -6.45, 9.32};  //既知ベクトル
 
-    // System.out.println(degree + "���A���ꎟ������\n");
-    // for(int i=0; i<degree; i++) {
-    //   for (int j=0; j<degree; j++) {
-    //     System.out.print(" +(" + coefficient_matrix[i][j] + ")�x[" + j + "]");
-    //   }
-    //   System.out.println(" = " + known_vector[i]);
-    // }
-
     LinearEquationSolver2 les = new LinearEquationSolver2(degree, coefficient_matrix, unknown_vector, known_vector);
 
     unknown_vector = les.calculateGJE();
@@ -65,51 +57,51 @@ class LinearEquationSolver2 {
   }
 
   // Gauss消去法の計算
-  public double [] calculateGE() {  // GE: Gaussian Elimination
-
-    double pivot;
-    double solution_element;
-    double coefficient_element;
-
-    for (int k=0; k<degree-1; ++k) {
-
-      pivot = coefficient_matrix[k][k];
-
-      for (int j=k+1; j<degree; ++j) {
-        coefficient_matrix[k][j] /= pivot;
-      }
-
-      known_vector[k] /= pivot;
-
-
-      for (int i=k+1; i<degree; ++i) {
-        coefficient_element = coefficient_matrix[i][k];
-
-        for (int j=k+1; j<degree; ++j) {
-          coefficient_matrix[i][j] -= coefficient_element * coefficient_matrix[k][j];
-        }
-
-        known_vector[i] -= coefficient_element * known_vector[k];
-      }
-    }
-
-    unknown_vector[degree-1] = known_vector[degree-1] / coefficient_matrix[degree-1][degree-1];
-
-
-    for (int k=degree-2; k>=0; --k) {
-
-      solution_element = known_vector[k];
-
-      for (int j=k+1; j<degree; ++j) {
-        solution_element -= coefficient_matrix[k][j] * unknown_vector[j];
-      }
-
-      unknown_vector[k] = solution_element;
-    }
-
-
-    return unknown_vector;
-  } // calculateGE()
+  // public double [] calculateGE() {  // GE: Gaussian Elimination
+  //
+  //   double pivot;
+  //   double solution_element;
+  //   double coefficient_element;
+  //
+  //   for (int k=0; k<degree-1; ++k) {
+  //
+  //     pivot = coefficient_matrix[k][k];
+  //
+  //     for (int j=k+1; j<degree; ++j) {
+  //       coefficient_matrix[k][j] /= pivot;
+  //     }
+  //
+  //     known_vector[k] /= pivot;
+  //
+  //
+  //     for (int i=k+1; i<degree; ++i) {
+  //       coefficient_element = coefficient_matrix[i][k];
+  //
+  //       for (int j=k+1; j<degree; ++j) {
+  //         coefficient_matrix[i][j] -= coefficient_element * coefficient_matrix[k][j];
+  //       }
+  //
+  //       known_vector[i] -= coefficient_element * known_vector[k];
+  //     }
+  //   }
+  //
+  //   unknown_vector[degree-1] = known_vector[degree-1] / coefficient_matrix[degree-1][degree-1];
+  //
+  //
+  //   for (int k=degree-2; k>=0; --k) {
+  //
+  //     solution_element = known_vector[k];
+  //
+  //     for (int j=k+1; j<degree; ++j) {
+  //       solution_element -= coefficient_matrix[k][j] * unknown_vector[j];
+  //     }
+  //
+  //     unknown_vector[k] = solution_element;
+  //   }
+  //
+  //
+  //   return unknown_vector;
+  // } // calculateGE()
 
 
 
