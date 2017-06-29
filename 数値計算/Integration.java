@@ -6,7 +6,7 @@
 public class Integration {
 
   static final int DIV_NUM = 100; //分割数
-  static final double X_MAX = 1.0; //xの区間(0~)
+  static final double X_MAX = 1.32302; //xの区間(0~)
   static final double MIN_DIV = X_MAX/(double)DIV_NUM; //分割
 
   public static void main (String [] args) {
@@ -23,10 +23,10 @@ public class Integration {
 
     Integration integration = new Integration();
 
-    for (int i=0; i<DIV_NUM; i++) {
+    for (int i=0; i<100; i++) {
 
       y0 = integration.defineFunction(x); //区分求積法,台形法用
-      y1 = integration.defineFunction(x+dx/2); //中点法用
+      y1 = integration.defineFunction(x+dx*0.5); //中点法用
       y2 = integration.defineFunction(x+dx); //台形法用
 
       sum_parts += y0*dx;  //区分求積法
@@ -36,7 +36,8 @@ public class Integration {
       x += dx;
     }
 
-    System.out.println("理論値: " + 0.5); //目指すところ
+    // System.out.println(integration.defineFunction(1.32302));
+    // System.out.println("理論値: " + 0.5); //目指すところ
     System.out.println("区分求積法: " + sum_parts);
     System.out.println("中点法: " + sum_midpoint);
     System.out.println("台形法: " + sum_trapezoid);
@@ -44,7 +45,7 @@ public class Integration {
 
   //積分する関数の定義
   double defineFunction(double x) {
-    return x;
+    return Math.exp(x)-x-1;
   }
 
 }

@@ -3,7 +3,7 @@
 public class Integration1 {
 
   static final double DIV_NUM = 100.0; //分割数
-  static final double X_MAX = Math.PI; //xの範囲(0~)
+  static final double X_MAX = 1.32302; //xの範囲(0~)
   static final double MIN_DIV = X_MAX/DIV_NUM;  //分割値
 
   public static void main (String [] args) {
@@ -33,7 +33,7 @@ public class Integration1 {
       x+=dx;
     }
 
-    System.out.println("理論値: " + (-Math.cos(Math.PI) - (-Math.cos(0.0))));
+    // System.out.println("理論値: " + (-Math.cos(Math.PI) - (-Math.cos(0.0))));
     System.out.println("区分求積法: " + sum_parts);
     System.out.println("中点法: " + sum_midpoint);
     System.out.println("台形法: " + sum_trapezoid);
@@ -41,7 +41,7 @@ public class Integration1 {
   }
 
   double defineFunction(double x) {
-    return Math.sin(x);
+    return Math.exp(x)-x-1;
   }
 
 }

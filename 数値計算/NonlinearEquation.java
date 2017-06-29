@@ -7,7 +7,7 @@
 // 3.初期値を設定
 // 4.実行
 
-public class  NonlinearEquation3 {
+public class  NonlinearEquation {
 
   static final double EPS = 10e-5; //イプシロン
 
@@ -17,27 +17,27 @@ public class  NonlinearEquation3 {
     double ansNewton = 0.0;
     double ansDigitalNewton = 0.0;
 
-    NonlinearEquation3 nonEqu = new NonlinearEquation3();
+    NonlinearEquation nonEqu = new NonlinearEquation();
 
-    ansBisection = nonEqu.calculateBisection(0.0, 5.0);
-    ansNewton = nonEqu.calculateNewton(5.0);
-    ansDigitalNewton = nonEqu.calculateDigitalNewton(5.0, 4.0);
+    // ansBisection = nonEqu.calculateBisection(0.0, 5.0);
+    ansNewton = nonEqu.calculateNewton(0.0);
+    // ansDigitalNewton = nonEqu.calculateDigitalNewton(5.0, 4.0);
 
     // System.out.println("理論値: " + (-1+Math.sqrt(1*1-4*1*(-6)))/(2*1));
-    System.out.println("2分法: " + ansBisection);
+    // System.out.println("2分法: " + ansBisection);
     System.out.println("ニュートン法: " + ansNewton);
-    System.out.println("割線法: " + ansDigitalNewton);
+    // System.out.println("割線法: " + ansDigitalNewton);
 
   }  // main
 
   //関数の定義
   double defineFunction(double x) {
-    return x*x + x - 6;
+    return Math.exp(x)+Math.cos(x)-4;
   }
 
   // ↑の関数の微分
   double deriveFunction(double x) {
-    return 2*x + 1;
+    return Math.exp(x)-Math.sin(x);
   }
 
   // 2分法

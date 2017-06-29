@@ -4,6 +4,9 @@
 # 積分
 →`Integration.java`
 # 非線形方程式の根
+* 2分法  
+* ニュートン法  
+* 割線法  
 →`NonlinearEquation.java`
 # 連立(行列)
 ### Gaussの消去法

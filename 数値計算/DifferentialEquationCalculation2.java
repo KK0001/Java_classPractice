@@ -16,8 +16,8 @@ public class DifferentialEquationCalculation2 {
     DifferentialEquationSolver4 des = new DifferentialEquationSolver4(100, 0.0, 0.0, 10);
 
     // 算出
-    des.calculateEuler(); //オイラー法
-    des.calculateModifiedEuler(); //修正オイラー法
+    // des.calculateEuler(); //オイラー法
+    // des.calculateModifiedEuler(); //修正オイラー法
     des.calculateRungeKutta(); //ルンゲ・クッタ法
 
   }
@@ -47,11 +47,13 @@ class DifferentialEquationSolver4 {
   // 関数を定義
   public double defineFunction(double x, double y) {
     return (x*Math.sin(x) - y)/(10*20);
+    // return (x*x - y)/(10*20);
   }
 
   // ↑をxで微分(yもxの関数であることに注意)
   public double defineDerivedFunction(double x, double y) {
-    return (Math.sin(x)+x+Math.cos(x) - defineFunction(x, y))/(10*20);
+    return (Math.sin(x)+x*Math.cos(x) - defineFunction(x, y))/(10*20);
+    // return (2*x - defineFunction(x, y))/(10*20);
   }
 
 
