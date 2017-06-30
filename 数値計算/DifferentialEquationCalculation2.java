@@ -1,6 +1,7 @@
 // オイラー法
 // 修正オイラー法
 // 4次のルンゲ・クッタ法
+
 // 1.入力関数を定義
 // 2.入力関数の微分を定義
 // 3.メインのクラスでのインストラクタの引数を書き換える→(分割数, 初期値, xの範囲)
@@ -13,7 +14,7 @@ public class DifferentialEquationCalculation2 {
   public static void main(String [] args) {
 
     // (分割数, x初期値, y初期値, xの範囲(0~))
-    DifferentialEquationSolver4 des = new DifferentialEquationSolver4(100, 0.0, 0.0, 10);
+    DifferentialEquationSolver4 des = new DifferentialEquationSolver4(100, 0.0, 0.0, 20.0);
 
     // 算出
     // des.calculateEuler(); //オイラー法
@@ -46,14 +47,18 @@ class DifferentialEquationSolver4 {
 
   // 関数を定義
   public double defineFunction(double x, double y) {
-    return (x*Math.sin(x) - y)/(10*20);
+    // return (x*Math.sin(x) - y)/(10*20);
     // return (x*x - y)/(10*20);
+
+    return -Math.cos(x)/(2*1);
   }
 
   // ↑をxで微分(yもxの関数であることに注意)
   public double defineDerivedFunction(double x, double y) {
-    return (Math.sin(x)+x*Math.cos(x) - defineFunction(x, y))/(10*20);
+    // return (Math.sin(x)+x*Math.cos(x) - defineFunction(x, y))/(10*20);
     // return (2*x - defineFunction(x, y))/(10*20);
+
+    return Math.sin(x)/(2*1);
   }
 
 

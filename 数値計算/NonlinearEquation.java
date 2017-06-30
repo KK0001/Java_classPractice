@@ -19,25 +19,29 @@ public class  NonlinearEquation {
 
     NonlinearEquation nonEqu = new NonlinearEquation();
 
-    // ansBisection = nonEqu.calculateBisection(0.0, 5.0);
-    ansNewton = nonEqu.calculateNewton(0.0);
+    ansBisection = nonEqu.calculateBisection(1.0, 2.0);
+    // ansNewton = nonEqu.calculateNewton(1.0);
     // ansDigitalNewton = nonEqu.calculateDigitalNewton(5.0, 4.0);
 
     // System.out.println("理論値: " + (-1+Math.sqrt(1*1-4*1*(-6)))/(2*1));
-    // System.out.println("2分法: " + ansBisection);
-    System.out.println("ニュートン法: " + ansNewton);
+    System.out.println("2分法: " + ansBisection);
+    // System.out.println("ニュートン法: " + ansNewton);
     // System.out.println("割線法: " + ansDigitalNewton);
 
   }  // main
 
   //関数の定義
   double defineFunction(double x) {
-    return Math.exp(x)+Math.cos(x)-4;
+    // return Math.exp(x)+Math.cos(x)-4;
+    // return Math.exp(x/2.0)+3*(x*x)-2;
+    return 7*x*x -7*x -7;
   }
 
   // ↑の関数の微分
   double deriveFunction(double x) {
-    return Math.exp(x)-Math.sin(x);
+    // return Math.exp(x)-Math.sin(x);
+    // return Math.exp(x/2.0)/2.0 +6*x;
+    return 14*x -7;
   }
 
   // 2分法
