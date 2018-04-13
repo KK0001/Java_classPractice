@@ -3,3 +3,6 @@
 
 *.png
 *.txt
+/オブジェクト指向プログラミング/JavaFXApplication1/nbproject/private/
+/オブジェクト指向プログラミング/JavaFXApplication1/build/
+/オブジェクト指向プログラミング/JavaFXApplication1/dist/
