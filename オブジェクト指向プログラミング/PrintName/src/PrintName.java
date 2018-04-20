@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication1;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -17,26 +16,26 @@ import javafx.stage.Stage;
  *
  * @author Kiku
  */
-public class JavaFXApplication1 extends Application {
+public class PrintName extends Application {
     
     @Override
     public void start(Stage primaryStage) {
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("名前を出力する。");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                System.out.println("16EC043 小瀬良開光です。");
             }
         });
         
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         
-        Scene scene = new Scene(root, 300, 250); // windowサイズ
+        Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("PrintName");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -44,10 +43,8 @@ public class JavaFXApplication1 extends Application {
     /**
      * @param args the command line arguments
      */
-    
-    //mainメソッドは必須という訳ではない。けれど必要な場合あり。
     public static void main(String[] args) {
-        launch(args); // アプリを起動？
+        launch(args);
     }
     
 }
