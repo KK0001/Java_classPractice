@@ -14,8 +14,8 @@ import java.util.regex.Matcher;
 
 public class CheckSIDApp extends Application {
 
-    public static String gakuban = "16EC043"; 
-    public static String yourname = "小瀬良開光";
+    public static String gakuban = "16EC999"; 
+    public static String yourname = "電大太郎";
 
     public static boolean checkSID(String sid) {
         Pattern p = Pattern.compile("^[0-9][0-9][a-zA-Z][a-zA-Z][0-9][0-9][0-9]$");
