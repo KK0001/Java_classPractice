@@ -1,7 +1,6 @@
 *.class
 .DS_Store
 
-*.png
 *.txt
 /オブジェクト指向プログラミング/JavaFXApplication1/nbproject/private/
 /オブジェクト指向プログラミング/JavaFXApplication1/build/
