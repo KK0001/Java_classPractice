@@ -1,0 +1,22 @@
+// 入力した文字数だけ「Hello World」を出力するもの。
+
+PARSER_BEGIN(HelloWorld)
+import java.io.*;
+public class HelloWorld {
+    public static void main(String[] arg) throws ParseException {
+	final HelloWorld parser = new HelloWorld(new InputStreamReader(System.in));
+	parser.start();
+    }
+}
+PARSER_END(HelloWorld)
+SKIP: {
+  " "
+ | "\n"
+ | "\r"
+}
+TOKEN: { <MOJI : ~[] >}
+private void start() :
+{}
+{
+   (<MOJI> { System.out.println("Hello World.");})*
+}

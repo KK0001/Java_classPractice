@@ -1,0 +1,23 @@
+// 空白で区切られた名前の集まりを認識するパーサ
+
+options
+{
+  static = false;
+}
+PARSER_BEGIN(Parser)
+class Parser {
+}
+PARSER_END(Parser)
+TOKEN: {
+    <NAME : ["A"-"Z","a"-"z"] (["A"-"Z","a"-"z","0"-"9"])*>
+}
+SKIP:{
+    " "
+| "\n"
+| "\r"
+}
+public void start() :
+{}
+{
+    (<NAME>)*
+}
